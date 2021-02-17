@@ -6,16 +6,16 @@ allkme_miR <- read_tsv("wb_allmiRNA_TPM_SignedKME.txt")
 mir100 <- allkme_miR %>% column_to_rownames(var="ID")
 mir100_target <- rownames(mir100)
 # Plug miRNA's into multiMiR and getting validated targets
-system.time(
-  multimir_results_all_cons25 <- get_multimir(org     = 'hsa',
-                                                 mirna   = mir100_target,
-                                                 table   = 'predicted',
-                                                 predicted.site = "conserved",
-                                                 predicted.cutoff  = 25,
-                                                 predicted.cutoff.type = "p",
-                                                 summary = FALSE)
-)
-save(multimir_results_all_cons25, file = "multimir_results_mirall_cons25.RData")
+#system.time(
+#  multimir_results_all_cons25 <- get_multimir(org     = 'hsa',
+#                                                 mirna   = mir100_target,
+#                                                 table   = 'predicted',
+#                                                 predicted.site = "conserved",
+#                                                 predicted.cutoff  = 25,
+#                                                 predicted.cutoff.type = "p",
+#                                                 summary = FALSE)
+#)
+#save(multimir_results_all_cons25, file = "multimir_results_mirall_cons25.RData")
 
 system.time(
   multimir_results_all_all25 <- get_multimir(org     = 'hsa',
@@ -28,7 +28,7 @@ system.time(
 )
 save(multimir_results_all_all25, file = "multimir_results_mirall_all25.RData")
 
-load("../s1_wb_miRNA_targets_multiMiR/multimir_results_mirall_cons25.RData")
+#load("../s1_wb_miRNA_targets_multiMiR/multimir_results_mirall_cons25.RData")
 load("../s1_wb_miRNA_targets_multiMiR/multimir_results_mirall_all25.RData")
 all562miR_target_cons25_re <- multimir_results_all_all25@data
 length(unique(all562miR_target_cons25_re$target_symbol)) 
