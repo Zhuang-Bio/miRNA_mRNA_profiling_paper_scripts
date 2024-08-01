@@ -24,3 +24,8 @@ There are five sections as below:
 Please contact me if you have any questions. 
 
 Email: zhuang.liu@ki.se
+
+
+# [MIT License](https://github.com/Zhuang-Bio/miRNA_mRNA_profiling_paper_scripts/blob/main/LICENSE) 
+Copyright (c) 2024 Zhuang Liu
+
